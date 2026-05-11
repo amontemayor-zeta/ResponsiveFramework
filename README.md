@@ -3,6 +3,32 @@ The Responsive Framework is a set of HTML guidelines that was designed through y
 
 [This page](https://selligentmarketingcloud.github.io/ResponsiveFramework/) shows how different clients render [the source html of the framework](https://github.com/SelligentMarketingCloud/ResponsiveFramework/blob/main/source/v5.0.html). Note that the goal of the Responsive Framework is not to be W3C compliant, but to be email client safe.
 
+This code is currently mainly focused for **Source Mode**. To be able to be used in **Content Blocks**, instead of using the "m_wrapper" to contain everything it will be necessary to use it in every Content Block.
+
+Here an example of how it should look the Content Block:
+
+```
+<!-- :: Add SL into aria-label tag -->
+<div role="article" aria-roledescription="email" aria-label="" lang="en" style="background-color:#d0d5d6;" class="m_wrapper darkBg">
+    <!--[if (gte mso 9)|(IE)]>
+    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:600px;" role="presentation" class="darkInner">
+        <tr>
+            <td align="center" width="600" style="width:600px;">
+                <![endif]-->
+                <div style="max-width:600px; margin:0 auto; font-size:16px; background-color:#ffffff;" class="darkInner">
+
+                    <!-- Insert here code for Contet Block -->
+
+                </div>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+        </tr>
+    </table>
+    <![endif]-->    
+</div>
+```
+
+
 # Sample layout
 
 ![GMail](https://github.com/SelligentMarketingCloud/ResponsiveFramework/raw/refs/heads/main/output/gmailcom-lm_chrcurrent_win10.png)
